@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request]
+on: [push, pull_request, release]
 
 jobs:
   lint:
@@ -37,3 +37,7 @@ jobs:
     - run: sudo apt install --install-recommends winehq-stable
     - run: npm ci
     - run: npm run build
+    - uses: actions/upload-artifact@v2
+      with:
+          name: Installer
+          path: out/make/squirrel.windows/x64
