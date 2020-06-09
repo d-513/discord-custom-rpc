@@ -2,5 +2,5 @@
 
 # Discord-Custom-RPC
 
-[![Download](https://img.shields.io/badge/DOWNLOAD-NOW-green?style=for-the-badge)]()
+[![Download](https://img.shields.io/badge/DOWNLOAD-NOW-green?style=for-the-badge)](https://github.com/dada513/discord-custom-rpc/releases/latest)  
 A discord rich presence client that allows you to easily set a custom rich presence.
