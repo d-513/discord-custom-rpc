@@ -17,6 +17,7 @@ jobs:
       - run: sudo add-apt-repository ppa:cybermax-dexter/sdl2-backport
       - run: sudo apt-add-repository "deb https://dl.winehq.org/wine-builds/ubuntu $(lsb_release -cs) main"
       - run: sudo apt install --install-recommends winehq-stable
+      - run: npm ci
       - run: npm run build
       - uses: actions/upload-artifact@v2
         with:
