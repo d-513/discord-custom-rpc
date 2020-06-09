@@ -1,0 +1,49 @@
+{
+  "name": "discord-custom-rpc",
+  "version": "1.0.1",
+  "description": "An app to set custom rich presence statuses in discord",
+  "main": "src/launch.js",
+  "scripts": {
+    "start": "nodemon .",
+    "pack": "webpack --config webpack.config.js",
+    "build": "npm run pack && npm run dist",
+    "lint": "standard",
+    "fix": "standard --fix",
+    "dist": "electron-forge make --platform win32 --arch x64"
+  },
+  "keywords": [],
+  "author": "dada513",
+  "license": "MIT",
+  "dependencies": {
+    "discord-rich-presence": "0.0.8",
+    "electron-squirrel-startup": "^1.0.0",
+    "moment": "^2.26.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.51",
+    "@electron-forge/maker-deb": "^6.0.0-beta.51",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.51",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.51",
+    "@electron-forge/maker-zip": "^6.0.0-beta.51",
+    "electron": "^9.0.2",
+    "nodemon": "^2.0.4",
+    "standard": "^14.3.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "src/Discord-Logo-Color.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "discord_custom_rpc"
+          }
+        }
+      ]
+    }
+  }
+}

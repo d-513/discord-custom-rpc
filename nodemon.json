@@ -1,0 +1,12 @@
+{
+  "watch": ["src"],
+  "ext": "js,html",
+  "ignore": [
+    "**/*.test.js",
+    "**/*.spec.js",
+    ".git",
+    "node_modules",
+    "**/bundle.js"
+  ],
+  "exec": "npm run pack && electron-forge start"
+}
