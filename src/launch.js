@@ -9,18 +9,23 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true,
-      preload: path.join(__dirname, 'preload.js')
+      nodeIntegration: true
     },
     icon: path.join(__dirname, 'Discord-Logo-Color.ico')
   })
   win.loadFile(path.join(__dirname, 'index.html'))
   win.setMenu(null)
+  win.webContents.openDevTools()
   ipcMain.on('rpc', (ignore, args) => {
     if (!client) client = rpc(args.client)
+    client.on('error', (err) => win.webContents.send('error', err))
+    client.on('connected', () => win.webContents.send('connected'))
     setTimeout(() => {
       client.updatePresence(args.options)
     }, 500)
+  })
+  ipcMain.on('app_quit', () => {
+    app.quit()
   })
 }
 

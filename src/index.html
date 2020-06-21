@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discord Rich Presence</title>
-    <script src="dist/bundle.js" defer></script>
+    <script src="index.js" defer></script>
     <style>
       body {
         background: #2c2f33;
@@ -13,10 +13,18 @@
       p {
         color: #7289da;
       }
+      .error {
+        color: red;
+      }
     </style>
   </head>
   <body>
     <p>Some of these settings are optional, you can leave them empty.</p>
+    <p>
+      <b>Note:</b> To change client id after already clicking <i>use</i>, you
+      will need to restart the app.
+    </p>
+    <p class="error"></p>
     <input type="text" id="client" placeholder="Client ID" />
     <input type="text" id="state" placeholder="State" />
     <input type="text" id="details" placeholder="Details" />
@@ -27,5 +35,7 @@
     <input type="text" id="smallImageKey" placeholder="Small Image Key" />
     <br />
     <button id="use">Use</button>
+    <button id="load">Load from file</button>
+    <button id="save">Save</button>
   </body>
 </html>

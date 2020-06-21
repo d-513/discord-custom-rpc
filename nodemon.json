@@ -8,5 +8,5 @@
     "node_modules",
     "**/bundle.js"
   ],
-  "exec": "npm run pack && electron-forge start"
+  "exec": "electron-forge start"
 }
